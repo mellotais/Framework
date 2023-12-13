@@ -138,7 +138,12 @@ public class Conjuntos<T> implements Conjunto<T> {
 	public void removerObservador(ConjuntoObserver<T> observador) {
 	    observadores.remove(observador);
 	}
-	
+
+	public void notificarObservadores() {
+        for (ConjuntoObserver<T> observador : observadores) {
+            observador.atualizar(this);
+        }
+    }
 
 	@Override
 	public String toString() {
