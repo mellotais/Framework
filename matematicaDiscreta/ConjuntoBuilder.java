@@ -12,13 +12,15 @@ public class ConjuntoBuilder<T> {
         return this;
     }
 
-    public Conjuntos<T> construir() {
-        return new Conjuntos<>(elementos);
-    }
     
     public ConjuntoBuilder<T> limparElementos() {
         throw new UnsupportedOperationException("Método não implementado");
     }
     
-    
+    public Conjuntos<T> construir() {
+        Conjuntos<T> conjunto = new Conjuntos<>(elementos);
+        // Notifica os observadores sobre a construção do novo conjunto
+        conjunto.notificarObservadores();
+        return conjunto;
+    }
 }
