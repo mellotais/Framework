@@ -22,7 +22,9 @@ import java.util.Set;
 	 
 	 // Método para remover observadores
 	 void removerObservador(ConjuntoObserver<T> observador);
-	
+
+	 void notificarObservadores();
+		
 	 int size();
 	 
 	 boolean contains(Object elemento);
